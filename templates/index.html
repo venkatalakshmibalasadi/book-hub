@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Hub</title>
+</head>
+<body>
+    <h1>📚 Book Hub</h1>
+
+    <form action="/search" method="post">
+        <input type="text" name="keyword" placeholder="Search books">
+        <button type="submit">Search</button>
+    </form>
+
+    <a href="/add">Add New Book</a>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book[1] }} by {{ book[2] }}
+                <a href="/delete/{{ book[0] }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
